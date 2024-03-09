@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        {% block title %} Comit {% endblock %}
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- for app rebbon -->
+    <style>
+      .slider-container {
+        width: 1203px;
+        overflow: hidden;
+      }
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      .containers {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .slide {
+        flex: 0 0 150px;
+      }
+      .button-container {
+        text-align: center;
+      }
+      button {
+        margin: 5px;
+      }
+      .main-elements {
+        margin-bottom: 50px;
+      }
+
+      .carousel-item img {
+        border-radius: 45px;
+      }
+
+      /* for app cover */
+      .custom-slide-images {
+        height: 200px;
+        width: 350px;
+        border-radius: 35px;
+      }
+
+      .custom-slide-app-image {
+        height: 50px;
+        width: 50px;
+        border-radius: 15px;
+      }
+
+      .custom-banner-img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .big-banner img {
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+
+    {% block body %} {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- for app rebbon -->
+    <script>
+      let currentIndex = 0;
+      const allSlides = document.querySelectorAll(".slides");
+      console.log(allSlides);
+
+      function prevSlide(buttonId) {
+        const slides = allSlides[buttonId];
+        console.log(slides);
+        const slideWidth = document.querySelector(".slide").offsetWidth;
+        currentIndex = Math.max(currentIndex - 7, 0);
+        slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+      }
+
+      function nextSlide(buttonId) {
+        const slides = allSlides[buttonId];
+        const slideWidth = document.querySelector(".slide").offsetWidth;
+        currentIndex = Math.min(currentIndex + 7, slides.children.length - 1);
+        slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+      }
+    </script>
+  </body>
+</html>
