@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-zc^!f9w#0k6_wqy=_t7n^7gdo$yk(xjdl3a6on27b$$ntr$sip
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'hadhi2django.share.zrok.io',
+]
 
 
 # Application definition
