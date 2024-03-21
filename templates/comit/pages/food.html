@@ -1,0 +1,13 @@
+{% extends "comit/base.html" %}
+
+{% block title %} FOOD {% endblock %} 
+
+{% block body %} 
+    {% include "comit/nav-bar.html" %}
+
+    {% include "comit/big-banner.html" %}
+    {% include "comit/app-rebbon.html" with buttonId="0" %}
+    {% include "comit/app-rebbon.html" with buttonId="1" %}
+
+
+{% endblock %}

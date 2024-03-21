@@ -1,0 +1,11 @@
+{% if alert == "success" %}
+<div class="alert alert-success">
+  <strong>Success!</strong> {{ message }}
+</div>
+{% endif %}
+
+{% if alert == "danger" %}
+<div class="alert alert-danger">
+    <strong>Unsuccess!</strong> {{ message }}
+</div>
+{% endif %}

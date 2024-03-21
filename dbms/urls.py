@@ -19,8 +19,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("temp",views.temp),
-    path("",views.home),
-    path('travel', views.travel),
-    path('food', views.food),
+    path("",views.add_data),
 ]
